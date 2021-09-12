@@ -1,0 +1,112 @@
+#uc_slot_machine_elementor19849 {
+    font-family:Arial;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.doors {
+    display: flex;
+    background-image: url(images/Group-488.svg);
+    padding: 55px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-filter: drop-shadow(20px 20px 60px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(20px 20px 60px rgba(0, 0, 0, 0.2));
+}
+.lever {
+    position: relative;
+    cursor: pointer;
+}
+.lever:after {
+    content: "";
+    background-image: url(images/Group-494.svg);
+    width: 50px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -300px;
+    right: -270px;
+}
+.lever.clicked:after {
+    transform: scaley(1) translate(0, 0);
+    animation-name: levelanimate;
+    animation-duration: 0.3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes levelanimate {
+    0% {
+        transform: translate(0, 0) scaley(1);
+    }
+    75% {
+        transform: translate(15px, 120px) scaley(0);
+    }
+    100% {
+        transform: translate(5px, 220px) scaley(-1);
+    }
+}
+.door {
+    background: #fafafa;
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 30px;
+    margin: 0 2ch;
+}
+.boxes {
+    transition: transform 1s ease-in-out;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+.box img {
+    height: 60px;
+    width: 80px;
+}
+.info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+.info img,
+.info {
+    height: 30px;
+    vertical-align: middle;
+}
+@media screen and (max-width: 1400px) {
+    #uc_slot_machine_elementor19849 {
+        zoom: 0.9;
+        -moz-transform: scale(0.9);
+    }
+}
+@media screen and (max-width: 1024px) {
+    #uc_slot_machine_elementor19849 {
+        zoom: 0.7;
+        -moz-transform: scale(0.7);
+    }
+}
+@media screen and (max-width: 512px) {
+    #uc_slot_machine_elementor19849 {
+        zoom: 0.5;
+        -moz-transform: scale(0.5);
+    }
+    .lever:after {
+        top: -293px;
+        right: -263px;
+    }
+}
